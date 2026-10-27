@@ -12,7 +12,7 @@ export const PROJECT_FOLDERS = [
   {
     id: 'web',
     title: 'Web & Frontend',
-    subtitle: 'Веб-разработка и интерактивные интерфейсы на React',
+    subtitle: 'Веб-разработка',
     tags: ['React', 'JavaScript', 'CSS3', 'Vite'],
     iconType: 'code',
   },
