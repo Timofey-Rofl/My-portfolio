@@ -1,0 +1,103 @@
+/* =========================================
+   ГЛОБАЛЬНЫЕ НАСТРОЙКИ + ФОНОВЫЕ СЛОИ
+   ========================================= */
+
+:root {
+  --glass-bg: rgba(20, 20, 24, 0.76);
+  --glass-bg-elevated: rgba(28, 28, 34, 0.86);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(255, 255, 255, 0.24);
+  --accent-warm: #e5c07b;
+  --accent-warm-soft: rgba(229, 192, 123, 0.16);
+  --accent-warm-border: rgba(229, 192, 123, 0.42);
+  --text-primary: #f4f4f6;
+  --text-secondary: rgba(244, 244, 246, 0.74);
+  --text-muted: rgba(244, 244, 246, 0.48);
+  --radius-card: 14px;
+  --radius-sm: 9px;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #09090b;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Одностраничный режим на десктопе и ноутбуках */
+@media (min-width: 960px) and (min-height: 680px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+/* ---------- ФОНОВЫЕ СЛОИ ---------- */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.bg-layer--base {
+  z-index: -4;
+  background-image: url('./assets/background.jpg');
+  background-size: cover;
+}
+
+.bg-layer--hover-ambient {
+  z-index: -3;
+  opacity: 0;
+  background-size: cover;
+  filter: blur(36px) saturate(1.2) brightness(0.38);
+  transform: scale(1.1);
+  transition: opacity 0.45s var(--ease-smooth);
+}
+
+.bg-layer--hover {
+  z-index: -2;
+  opacity: 0;
+  background-size: contain;
+  filter: blur(2px) brightness(0.68);
+  transition: opacity 0.45s var(--ease-smooth);
+}
+
+.bg-layer--hover-ambient.is-active,
+.bg-layer--hover.is-active {
+  opacity: 1;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(10, 10, 14, 0.36) 0%,
+    rgba(8, 8, 12, 0.72) 100%
+  );
+  pointer-events: none;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
