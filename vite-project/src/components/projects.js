@@ -71,10 +71,10 @@ const PROJECTS = [
     priority: 1,
     kind: 'Веб-сайт',
     isPrimary: true,
-    title: 'Портфолио «Мряу.рф»',
+    title: 'Исходный код',
     platform: 'React + Vite',
-    description: 'Одностраничный сайт-визитка с папками проектов, слайдером работ и динамическим фоном.',
-    url: 'https://xn--l1aij1c.xn--p1ai/',
+    description: 'Исходный код этого одностраничного сайта-визитки.',
+    url: 'https://github.com/Timofey-Rofl/My-portfolio.git',
     iconType: 'react',
   },
 ];
