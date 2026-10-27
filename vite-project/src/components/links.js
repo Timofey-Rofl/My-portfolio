@@ -24,7 +24,7 @@ const LINKS = [
     subtitle: 'Исходный код',
     type: 'where',
     iconType: 'github', // Встроенная векторная иконка
-    url: 'https://github.com/Timofey-Rofl', // ← Вставь ссылку на свой GitHub
+    url: 'https://github.com/Timofey-Rofl/My-portfolio.git', // ← Вставь ссылку на свой GitHub
   },
 ];
 
